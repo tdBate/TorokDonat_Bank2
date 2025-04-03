@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Bank2
 {
-    internal class BankAccount : BankingService
+    internal abstract class BankAccount : BankingService
     {
         double balance;
 
-        public double Balance { get; protected set; }
+        public double Balance { get => balance; protected set => balance = value; }
+
         public BankAccount(Owner owner) : base(owner)
         {
         }

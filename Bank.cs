@@ -8,7 +8,9 @@ namespace Bank2
 {
     internal class Bank
     {
-        BankAccount[] accounts;
+        private BankAccount[] accounts;
+
+        internal BankAccount[] Accounts { get => accounts; set => accounts = value; } //tudom, hogy ez így nem jó, de máshogy nem sikerült nekem tesztelni
 
         public Bank(int maxAccountCount)
         {
@@ -31,7 +33,10 @@ namespace Bank2
             double osszeg = 0;
             foreach (var account in accounts)
             {
-                osszeg += account.Balance;
+                if (account != null)
+                {
+                    osszeg += account.Balance;
+                }
             }
             return osszeg;
         }

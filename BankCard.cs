@@ -11,8 +11,10 @@ namespace Bank2
         double accountBalance;
         string cardNumber;
 
-        public string CardNumber { get; }
-        public double AccountBalance { get; }
+
+        public double AccountBalance { get => accountBalance;}
+        public string CardNumber { get => cardNumber; }
+
         public BankCard(Owner owner, double accountBalance, string cardNumber) : base(owner)
         {
             this.accountBalance = accountBalance;
